@@ -1,6 +1,6 @@
 # tiny-mandelbrot
 
-A variable resolution Mandelbrot visualizer for the JS canvas in under 1kb. 
+A variable resolution Mandelbrot visualizer for the JS canvas in just 262 bytes
 
 Change the Query String of the URL, to change the resolution (e.g. https://missing-user.github.io/tiny-mandelbrot#2000 for 2000x2000px)
 
