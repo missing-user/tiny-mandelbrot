@@ -1,0 +1,14 @@
+<canvas id=a>
+  <script>
+    c = a.getContext`2d`, 
+    a.height = a.width = h = location.hash.substr(1)||1e3; //set square canvas dimensions and save height
+    img = c.createImageData(h, h); 
+    img_data = img.data; o = 3;
+    for (y = h; y--;)
+      for (x =  h; x--; img_data[o+=4] =i) //only set the alpha values, color defaults to black
+        for (i = zi = zr = 0; i<255&zi*zi+zr*zr<4;) //max iterations = 255, so no further normalization is needed for display
+          xtemp = zi * zr,
+          zi = zi * zi - zr * zr-2 + 4*x / h, //imaginary part of z
+          zr = 2 * xtemp - 2 + 4*y / h, i++; //real part of z
+    c.putImageData(img, 0, 0)
+  </script>
