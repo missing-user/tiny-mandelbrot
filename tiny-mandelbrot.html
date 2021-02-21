@@ -1,12 +1,12 @@
-<canvas id=a style=background:black>
+<canvas id=a>
   <script>
-    c = a.getContext`2d`, a.height = a.width = h = w = 900,
+    c = a.getContext`2d`, a.height = a.width = h = w = 1e3,
       g = c.createImageData(w, h)
     m = g.data
-    o = 0;
-    for (y = 0; y++ < h;)
-      for (x = 0; x++ < w;m[o++] = m[o++] = m[o++] = m[o++] = 255 - i)
-        for (i = j = k = 0; i<255 & j * j + k * k < 9;) 
+    o = -1;
+    for (y = h; y--;)
+      for (x = 0; x++ < w;m[o=o+4] =i)
+        for (i = j = k = 0; i<255 & j * j + k * k < 6;) 
           l = j * k,
           j = j * j - k * k + -2 + x / 250,
           k = 2 * l + - 2 + y / 250, i++;
