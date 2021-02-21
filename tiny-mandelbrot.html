@@ -1,18 +1,14 @@
 <canvas id=a style=background:black>
   <script>
     c = a.getContext`2d`, a.height = a.width = h = w = 900,
-      img = c.createImageData(w, h)
-    imd = img.data
-    offset = 0
+      g = c.createImageData(w, h)
+    m = g.data
+    o = 0;
     for (y = 0; y++ < h;)
-      for (x = 0; x++ < w;) {
-        i = zx = zy = 0, cx = -2 + x / 250, cy = - 2 + y / 250;
-        do {
-          xt = zx * zy
-          zx = zx * zx - zy * zy + cx
-          zy = 2 * xt + cy; i++
-        } while (i < 255 && zx * zx + zy * zy < 4);
-        imd[offset++] = imd[offset++] = imd[offset++] = imd[offset++] = 255 - i;
-      }
-    c.putImageData(img, 0, 0)
+      for (x = 0; x++ < w;m[o++] = m[o++] = m[o++] = m[o++] = 255 - i)
+        for (i = j = k = 0; i<255 & j * j + k * k < 9;) 
+          l = j * k,
+          j = j * j - k * k + -2 + x / 250,
+          k = 2 * l + - 2 + y / 250, i++;
+    c.putImageData(g, 0, 0)
   </script>
