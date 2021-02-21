@@ -6,9 +6,9 @@
     o = -1;
     for (y = h; y--;)
       for (x = 0; x++ < w;m[o=o+4] =i)
-        for (i = j = k = 0; i<255 & j * j + k * k < 6;) 
+        for (i = j = k = 0; i<255 & j*j < 6;) 
           l = j * k,
-          j = j * j - k * k + -2 + x / 250,
-          k = 2 * l + - 2 + y / 250, i++;
+          j = j * j - k * k-2 + x / 250,
+          k = 2 * l - 2 + y / 250, i++;
     c.putImageData(g, 0, 0)
   </script>
