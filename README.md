@@ -1,18 +1,22 @@
 # tiny-mandelbrot
 
-A variable resolution Mandelbrot visualizer for the JS canvas in just 242 bytes
+
+
+A variable resolution Mandelbrot visualizer for the JS canvas in **just 241 bytes**
 
 Change the Query String of the URL, to change the resolution (e.g. https://missing-user.github.io/tiny-mandelbrot#2000 for 2000x2000px)
 
 Check it out! https://missing-user.github.io/tiny-mandelbrot#1000
 
-The full code:
-``<body onload=for(c=a.getContext`2d`,a.height=a.width=h=location.hash.substr(1)||1e3,M=c.createImageData(h,h),k=x=h*h;x--;M.data[4*x-1]=i)for(i=I=R=0;i<255&I<2&R<2;i++)T=I*R,I=I*I-R*R-2+x%h/h*4,R=2*T-2+4*x/k;c.putImageData(M,0,0)><canvas id=a>``
+The entire html page:
+```html
+<body onload=for(c=a.getContext`2d`,a.height=a.width=h=location.hash.substr(1)||1e3,M=c.createImageData(h,h),k=x=h*h;x--;M.data[4*x-1]=i)for(i=I=R=0;i<255&I<2&R<2;i++)T=I*R,I=I*I-R*R-2+x%h/h*4,R=2*T-2+4*x/k;c.putImageData(M,0,0)><canvas id=a
+```
 
 ## Techniques used
-- The first thing that one might notice is that there is no ``<html>`` or ``<head>`` wrapping the code, since both will be inserted by the browser automatically and therefore aren't required. The body is also missing the closing tag to save 7 characters.
+- The first thing that one might notice is that there is no ``<html>`` or ``<head>`` wrapping the code, since both will be inserted by the browser automatically and therefore aren't required. The body is also missing the closing tag, since the HTML spec will correct this mistake and it saves us 7 more bytes. 
 
-- To add JavaScript into HTML I use the body onload function. Since this method doesn't require quotes around the argument, we can drop them to save a total of 5 bytes over using ``<script></script>`` tags.
+- To add JavaScript into HTML I use the body onload function, saving 5 bytes over ``<script></script>`` tags.
 
 - Chained assignments are being used whenever possible to save a few characters like so:
 ``i=0; j=0; w=0`` can be reduced to ``i=j=w=0``
