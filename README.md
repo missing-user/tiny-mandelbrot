@@ -17,13 +17,13 @@ https://missing-user.github.io/tiny-mandelbrot/pretty_high_contrast
   <body
   onload=for(c=a.getContext`2d`,a.height=a.width=h=1e3,M=c.createImageData(h,h),k=x=h*h;x--;M.data[4*x-1]=i)for(i=I=R=0;i<255&I*I+R*R<2;i++)T=I*R,I=I*I-R*R-2+x%h/h*4,R=2*T-2+4*x/k;c.putImageData(M,0,0)><canvas
     id="a"
-  ></canvas>
+  >
   ```
 
 - **244 bytes** version with resolution query string support (Change the Query String at the end of the URL, to load a different the resolution, e.g. https://missing-user.github.io/tiny-mandelbrot#1500 for 1500x1500px):
 
   ```html
-  <body onload=for(c=a.getContext`2d`,a.height=a.width=h=location.hash.substr(1)||1e3,M=c.createImageData(h,h),k=x=h*h;x--;M.data[4*x-1]=i)for(i=I=R=0;i<255&I<2&R<2;i++)T=I*R,I=I*I-R*R-2+x%h/h*4,R=2*T-2+4*x/k;c.putImageData(M,0,0)><canvas id=a
+  <body onload=for(c=a.getContext`2d`,a.height=a.width=h=location.hash.substr(1)||1e3,M=c.createImageData(h,h),k=x=h*h;x--;M.data[4*x-1]=i)for(i=I=R=0;i<255&I<2&R<2;i++)T=I*R,I=I*I-R*R-2+x%h/h*4,R=2*T-2+4*x/k;c.putImageData(M,0,0)><canvas id=a>
   ```
 
 ## Minification
